@@ -28,7 +28,7 @@ spec:
         app: clap-api
     spec:
       containers:
-      - image: feeeeliipe/clap-api:latest
-        name: api
-        ports:
-        - containerPort: 3000
+        - image: clap-api
+          name: clap-api
+          ports:
+            - containerPort: 3000
