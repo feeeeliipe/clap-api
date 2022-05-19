@@ -19,10 +19,7 @@ jobs:
       - name: Push image to Registry
         run: docker push feeeeliipe/clap-api:${{ github.sha }}
   update-infra:
-    runs-on: ubuntu-latest
     needs: build
-    steps:
-      - name: Update infra repository
-        uses: feeeeliipe/clap-api-infra-k8s/.github/workflows/update-app-image.yaml@main
-        with:
-          newImage: feeeeliipe/clap-api:${{ github.sha }}
+    uses: feeeeliipe/clap-api-infra-k8s/.github/workflows/update-app-image.yaml@main
+    with:
+      newImage: feeeeliipe/clap-api:${{ github.sha }}
