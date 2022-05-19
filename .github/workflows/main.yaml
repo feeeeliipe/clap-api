@@ -30,7 +30,6 @@ jobs:
         run: |
           cd k8s/
           kustomize edit set image clap-api=feeeeliipe/clap-api:${{ github.sha }}
-          cat clap-api-deployment.yaml
       - name: Commit updates on K8s manifest
         run: |
           git config user.email "demo@actions.com"
