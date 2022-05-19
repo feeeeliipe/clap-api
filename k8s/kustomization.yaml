@@ -2,6 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 images:
+- name: clap-api
+  newName: feeeeliipe/clap-api
+  newTag: be055df619d4684570fa0d860fddeab17cca9585
 - name: feeeeliipe/clap-api
   newTag: lastest
 
