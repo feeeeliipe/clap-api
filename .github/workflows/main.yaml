@@ -31,11 +31,12 @@ jobs:
           cd k8s/
           kustomize edit set image feeeeliipe/clap-api:${{ github.sha }}
           cat clap-api-deployment.yaml
-      - name: Push new K8s manifest to repository
+      - name: Commit updates on K8s manifest
         run: |
           git config user.email "demo@actions.com"
           git config user.name "GH Actions Pipeline"
           git add .
           git commit -m "Updating k8s manifest with new version"
-          git push origin main
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
     
