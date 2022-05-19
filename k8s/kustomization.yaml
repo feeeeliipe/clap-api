@@ -4,7 +4,7 @@ kind: Kustomization
 images:
 - name: clap-api
   newName: feeeeliipe/clap-api
-  newTag: f16a6c1bdf11a2c536a6fe5388acc81ccdcfa72d
+  newTag: 5ed1ff7bac9dd52102273284a1ecf70cfb1a76b4
 
 resources:
 - clap-api-deployment.yaml
