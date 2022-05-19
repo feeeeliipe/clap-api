@@ -11,3 +11,10 @@ jobs:
         uses: actions/checkout@v1
       - name: Build docker image
         run: docker build -t feeeeliipe/clap-api:${{ github.sha }} .
+      - name: Login to docker hub
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: feeeeliipe
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_SECRET }}
+      - name: Push image to Registry
+        run: docker push feeeeliipe/clap-api:${{ github.sha }}
