@@ -4,7 +4,7 @@ const app = express();
 
 app.get("/clap", (req, res) => {
     res.json({
-        claps: ['👏', '👏', '👏', '👏', '👏', '👏']
+        claps: ['👏', '👏']
     })
 })
 
