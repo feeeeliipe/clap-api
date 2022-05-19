@@ -34,5 +34,5 @@ jobs:
           git config user.name "GH Actions Pipeline"
           git add .
           git commit -m "Updating k8s manifest with new version: `${{ github.sha }}`"
-          git push
+          git push origin main
     
