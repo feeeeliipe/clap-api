@@ -29,7 +29,7 @@ jobs:
       - name: Set new version to K8s manifest
         run: |
           cd k8s/
-          kustomize edit set image feeeeliipe/clap-api:${{ github.sha }}
+          kustomize edit set image clap-api=feeeeliipe/clap-api:${{ github.sha }}
           cat clap-api-deployment.yaml
       - name: Commit updates on K8s manifest
         run: |
