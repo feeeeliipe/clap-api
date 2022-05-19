@@ -26,13 +26,16 @@ jobs:
         uses: actions/checkout@v1
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v1
-      - name: Set new version to k8s manifest
+      - name: Set new version to K8s manifest
         run: |
           cd k8s/
           kustomize edit set image feeeeliipe/clap-api:${{ github.sha }}
+          cat clap-api-deployment.yaml
+      - name: Push new K8s manifest to repository
+        run: |
           git config user.email "demo@actions.com"
           git config user.name "GH Actions Pipeline"
           git add .
-          git commit -m "Updating k8s manifest with new version: `${{ github.sha }}`"
+          git commit -m "Updating k8s manifest with new version"
           git push origin main
     
