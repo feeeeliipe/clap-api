@@ -1,0 +1,13 @@
+name: Build Clap API
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+      - name: Build docker image
+        run: docker build -t feeeeliipe/clap-api:${{ github.sha }} .
