@@ -25,3 +25,5 @@ jobs:
     uses: feeeeliipe/clap-api-infra-k8s/.github/workflows/update-app-image.yaml@main
     with:
       newImage: feeeeliipe/clap-api:${{ github.sha }}
+    secrets:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
