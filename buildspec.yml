@@ -4,7 +4,7 @@ phases:
   install:
     on-failure: ABORT
     runtime-versions:
-      runtime: nodejs: 16.x
+      nodejs: 16.x
     commands:
       - npm install
     finally:
