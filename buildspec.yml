@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    on-failure: ABORT
+    runtime-versions:
+      runtime: nodejs: 16.x
+    commands:
+      - npm install
+    finally:
+      - echo "Just installed all dependencies"
+  pre_build:
+    on-failure: ABORT
+    commands:
+      - echo "Running pre-build"
+  build:
+    on-failure: ABORT
+    commands:
+      - echo "build project"
+  post_build:
+    on-failure: ABORT
+    commands:
+      - echo "Post build pahse running"
+artifacts:
+  files:
+    - 'node_modules/*'
+    - 'src/*'
+  name: clap-api-app
+  s3-prefix: test-s3-prefix
